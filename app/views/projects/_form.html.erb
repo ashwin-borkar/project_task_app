@@ -1,0 +1,22 @@
+<div class="container-fluid">
+<%= form_for(@project) do |f| %>
+  <div>
+    <div class="form-group">
+      Project Name: <%= f.text_field :name %>
+    </div>
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">Task</h5>
+        <%= f.fields_for :tasks do |t| %>
+          <%= render "task_fields", :f => t %>
+        <% end %>
+        <button><%= link_to_add_association 'Add Task', f, :tasks, partial: 'task_fields'%></button>
+      </div>
+    </div>
+    <div>
+      <br>
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
+</div>

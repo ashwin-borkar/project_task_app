@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project Name:</strong>
+  <%= @project.name %>
+</p>
+<p>
+  <strong>No. Of Tasks</strong>
+  <%= @project.tasks.count %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
